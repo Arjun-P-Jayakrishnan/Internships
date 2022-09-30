@@ -1,0 +1,62 @@
+body{
+	background-color: #091803;
+	background-image: url("./underground-parking-cars-white-colors.jpg");
+	background-size: cover;
+}
+
+label{
+	color: #FF4500;
+	font-size: 2em;
+}
+
+
+
+
+
+
+
+.Parking_lot{
+	background-image: url("./800px_COLOURBOX15604672.jpg");
+	background-color: #BC9476;
+	margin: 20em auto;
+	width: 30em;
+	height: 20em;
+
+
+	display: flex;
+	flex-direction: column;
+
+	border-style: solid;
+	border-radius: .5em;
+	border-width: .2em;
+	border-color:#FF4500;
+}
+
+.hours_park{
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hours_park>input{
+	font-size: 2em;
+}
+
+
+.vehicle_btn{
+
+
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.vehicle_btn>button{
+	width: 10em;
+	margin: .5em;
+	border-radius: .5em;
+	background-color:#FF4500 ;
+}

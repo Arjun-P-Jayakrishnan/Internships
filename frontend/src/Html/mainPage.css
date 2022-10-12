@@ -1,0 +1,67 @@
+body{
+	background-color: #000;
+	background-image: url("../Html/parking_lot.jpg");
+	margin: 0em;
+}
+li{
+	list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.Navbar{
+
+	background-color: #797D7F;
+	margin: 0em;
+	height: 5em;
+	width: inherit;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+
+}
+
+.navIcon{
+
+	padding: 2em;
+
+}
+
+.navOptions{
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	padding: 2em;
+}
+
+.fa-square-parking{
+
+	font-size: 5em;
+
+}
+
+.fa-warehouse{
+	font-size: 2em;
+}
+
+.fa-user{
+	font-size: 2em;
+}
+
+span+span{
+	margin-left: 5em;
+}

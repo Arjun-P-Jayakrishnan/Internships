@@ -43,21 +43,21 @@ export default class PrkLotsDAO{
 	SlotsPerPage=20
 	}={})
 	{
-			let query
-			if(filters){
+			let query={}
+			// if(filters){
 
-				if("name" in filters){
+			// 	if("name" in filters){
 
-					query={$text:{$search:filters["name"]}}
+			// 		query={$text:{$search:filters["name"]}}
 
-				}
-				else if("vehicleType" in filters){
+			// 	}
+			// 	else if("vehicleType" in filters){
 
-					query={vehicleType:{$eq:filters["vehicleType"]}}
+			// 		query={vehicleType:{$eq:filters["vehicleType"]}}
 
-				}
+			// 	}
 
-			}
+			// }
 			// query={vehicleType:"car"};
 
 
@@ -87,8 +87,6 @@ export default class PrkLotsDAO{
 
 				const SlotLists=await displayCursor.toArray()
 				const totalNumSlots=await PrkLotDetails.countDocuments(query)
-
-				console.log(`${JSON.stringify(SlotLists,totalNumSlots)}`)
 				
 				return {SlotLists,totalNumSlots}
 

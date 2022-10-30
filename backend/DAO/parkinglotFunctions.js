@@ -72,18 +72,18 @@ export default class ParkingLotDAO{
 			//serarches for a user_id and _id
 			const updateResponse= await parking_lot.updateOne({
 
-				_id:Object_ID(lot_Id),
-				user_id:user_Id
+				_id:Object_ID(user_Id),
+				user_id:"1234"
 
 
 			},
 			{
 
-				$set:{text:text,date:date,vehicleType:vehicleType,slotType:slotType}
+				$set:{text:text,date:date,vehicleType:vehicleType,SlotType:slotType}
 			},
-
+			{multi:true}
 			)
-			
+			console.log(`Updated Response ${JSON.stringify(updateResponse)}`)
 			return updateResponse
 		}
 		catch (e){
@@ -97,14 +97,14 @@ export default class ParkingLotDAO{
 	static async removeSlot(lot_id,user_Id){
 
 			try{
-
+				console.log(`delete data ${JSON.stringify({lot_id:lot_id,user_id:user_Id})}`)
 				const deleteResponse=await parking_lot.deleteOne(
 						{
 							_id:Object_ID(lot_id),
-							user_id:user_Id,
+							user_id:"1234",
 						}
 					)
-
+				console.log(`deleted value  ${JSON.stringify(deleteResponse)}`)
 				return deleteResponse
 
 			}

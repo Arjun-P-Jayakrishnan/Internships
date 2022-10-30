@@ -18,7 +18,7 @@ export default class prkSlotManager{
 
 	static async SlotInfo_check(){
 
-		const Slots=await prkSlotsDAO.getSlotInfo(null)
+		const Slots=await prkSlotsDAO.getPrkLotDetails()
 
 	 	console.log(Slots)
 

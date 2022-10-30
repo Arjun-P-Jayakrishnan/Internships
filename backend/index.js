@@ -1,4 +1,4 @@
-
+import app from "./server.js"
 import mongodb from "mongodb"
 import dotenv from "dotenv"
 import prkFunctionDAO from "./DAO/parkinglotFunctions.js"
@@ -6,8 +6,6 @@ import prkSlotsDAO from "./DAO/PrkSlots.js"
 
 
 dotenv.config()
-
-app=require('./server.js')
 
 const MongoClient=mongodb.MongoClient
 

@@ -50,6 +50,14 @@ export default class SlotDetailCtrl{
 
 	}
 
+	static async Slot_Details(req,res,next){
+
+		const Slots=await SlotDetailsDAO.getPrkLotDetails()
+
+	 	res.json(Slots)
+
+ 	}
+
 
 
 

@@ -2,7 +2,7 @@ import React from "react";
 import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
 
 
-import addToSlot from "./components/addToSlot.js";
+import AddToSlot from "./components/addToSlot.js";
 import Login from "./components/login.js"
 import ParkingLotsAvailable from "./components/parkingLotsAvailable.js"
 import SlotDetails from "./components/SlotDetails.js"
@@ -43,7 +43,7 @@ async function login(user=null){
             </a>
         <div className="navOptions">
           <li>
-            <Link to={'/parking_lots/addSlot'} className="navOption1">                          
+            <Link to={'/prkLot/addSlot'} className="navOption1">                          
                 ParkingSlots
             </Link>
           </li>
@@ -64,20 +64,9 @@ async function login(user=null){
     <Routes>
 
       <Route  path="/" element={<ParkingLotsAvailable/>} exact/>
-      <Route
-            path="/parking_lots/addSlot"
-            render={(props)=>(
-                  <addToSlot {...props} user={user}/>
-              )}
-      />
+      
 
-      <Route
-            path="/prkLot/manageLot"
-            render={(props)=>(
-                <SlotDetails {...props} user={user}/>
-              )
-            }
-      />
+      <Route path="/prkLot/addSlot" element={<AddToSlot/>} exact/>
 
       <Route
             path="/prkLot/login"
@@ -85,6 +74,8 @@ async function login(user=null){
                 <Login {...props} login={login}/>
               )}
       />
+
+      <Route path="/prkLot/UpdateSlot" element={<SlotDetails/>} exact/>
 
     </Routes>
 

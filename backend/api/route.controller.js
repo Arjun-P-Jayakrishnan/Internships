@@ -13,7 +13,7 @@ const router=express.Router()
 
 
 
-router.route("/listSlot").get(prkDetails.apiGetSlots)
+router.route("/listSlot").get(prkDetails.Slot_Details)
 router.route("/manageSlot").get(slotManager.SlotInfo_check)
 
 router

@@ -31,7 +31,7 @@ export default class prkLotCtrl{
 			const slotType=req.body.slotType
 
 			const date=new Date()
-
+				console.log(`values in obtained as req ${JSON.stringify(vehicleType)}`)
 			const SlotResponse=await prkLotDAO.addToSlot(
 					lotID,
 					userInfo,
@@ -40,6 +40,7 @@ export default class prkLotCtrl{
 					vehicleType,
 					slotType,
 				)
+
 			res.json(`Successfully obtained values from the request`)
 
 
@@ -60,7 +61,8 @@ export default class prkLotCtrl{
 
 		try{
 
-				const lotID=req.body.Parking_Lot_ID
+
+				const lotID=req.body.Parking_Lot_Id
 				const parkInfo=req.body.text
 				const userInfo={
 					name:req.body.name,
@@ -69,7 +71,14 @@ export default class prkLotCtrl{
 				const date=new Date()
 				const vehicleType=req.body.vehicleType
 				const slotType=req.body.slotType
-
+				console.log(`The parking Lot ID ${lotID}`)
+				console.log(`The values recieved ${JSON.stringify({
+					lotID:lotID,
+					_id:userInfo._id,
+					parkInfo:parkInfo,
+					date:date,
+					vehicleType:vehicleType,
+					slotType:slotType})}`)
 
 				const SlotResponse =await prkLotDAO.updateSlot(
 					lotID,
@@ -111,8 +120,8 @@ export default class prkLotCtrl{
 		try{
 
 			const lotId=req.query.id
-			const user_id=req.body.user_id
-
+			const user_id=req.body.user_id;
+			console.log(`The slot to be deleted and lot id ${lotId}`)
 			const slotResponse=await prkLotDAO.removeSlot(
 				lotId,
 				user_id
